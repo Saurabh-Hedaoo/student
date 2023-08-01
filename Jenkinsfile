@@ -16,7 +16,7 @@ pipeline {
 
         stage('deploy in S3') {
             steps {
-                sh 'aws s3 cp /var/lib/jenkins/workspace/student\ pipeline/target/studentapp-2.2-SNAPSHOT.war s3://saurabh-jenkins/'
+                sh 'aws s3 cp /var/lib/jenkins/workspace/student pipeline/target/studentapp-2.2-SNAPSHOT.war s3://saurabh-jenkins/'
             }
         }
     }
