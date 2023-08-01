@@ -2,17 +2,21 @@ pipeline {
     agent any
 
     stages {
-        stage('Checkout') {
+        stage('git checkout') {
             steps {
-                // Checkout the repository from GitHub
                 git 'https://github.com/Saurabh-Hedaoo/student.git'
             }
         }
 
-        stage('Build') {
+        stage('mvn build') {
             steps {
-                // Build your Java web application (you may need to adjust this based on your build tool, e.g., Maven, Gradle)
                 sh 'mvn clean package'
+            }
+        }
+
+        stage('deploy in S3') {
+            steps {
+                sh 'aws s3 cp /var/lib/jenkins/workspace/student\ pipeline/target/studentapp-2.2-SNAPSHOT.war s3://saurabh-jenkins/'
             }
         }
     }
