@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        S3_BUCKET_NAME = 'jenkinsgolu' // Replace with your S3 bucket name
+        S3_BUCKET_NAME = 'jenkinssoham' // Replace with your S3 bucket name
         VERSION = '2.2-SNAPSHOT' // Replace with your desired version or use a dynamic value
     }
 
