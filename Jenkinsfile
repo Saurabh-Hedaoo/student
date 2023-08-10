@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        S3_BUCKET_NAME = 'jenkins.02-08' // Replace with your S3 bucket name
+        S3_BUCKET_NAME = 'jenkinsbalti' // Replace with your S3 bucket name
         VERSION = '2.2-SNAPSHOT' // Replace with your desired version or use a dynamic value
     }
 
@@ -21,7 +21,7 @@ pipeline {
 
         stage('deploy in S3') {
             steps {
-                sh "aws s3 cp /var/lib/jenkins/workspace/Sourabh/target/studentapp-${VERSION}.war s3://${S3_BUCKET_NAME}/"
+                sh "aws s3 cp /var/lib/jenkins/workspace/tommy/target/studentapp-${VERSION}.war s3://${S3_BUCKET_NAME}/"
             }
         }
     }
